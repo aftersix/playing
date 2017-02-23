@@ -15,6 +15,9 @@ app.get('/',routes.index);
 var about = require('./routes/about');
 app.get('/about', about.about);
 
+var trains = require('./routes/trains');
+app.get('/trains', trains.trains);
+
 http.createServer(app).listen(app.get('port'), function(){
-console.log('Express erver listening on port ' + app.get('port'));
+console.log('Express server listening on port ' + app.get('port'));
 });
