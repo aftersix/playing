@@ -7,24 +7,33 @@
 	<div class="container">
 		<div class="page-header">
 			<h1>
-				trains <small>What we aim for!</small>
+				</br>
+				Train Times in Salem <small>So my hunny knows when I'll be home!</small>
 			</h1>
 		</div>
 		<div class="panel panel-default">
-			<div class="panel-heading">trains</div>
+			<div class="panel-heading">When the HUNNY EXPRESS is scheduled to arrive in Salem</div>
 			<div class="panel-body">
-				<p>Trains content</p>
-				<strong><%= array %></strong>
+				<!-- <p>Trains content</p> --->
+				<!-- <strong><%= mbtaFeed %></strong> --->
 						
-					  <% for(var i=0; i<array['sync_contact_list'].length; i++) {%>
-						 
+					  <% 
+					  
+					  try { for(var i=0; i<mbtaFeed['Messages'].length; i++) {
+							%>
+						 		 
+						   
 						  
 						 <tr>
-						   <td><%= array['sync_contact_list'][i]['name'] %></td>
-						   <td><%= array['sync_contact_list'][i]['number'] %></td>
-						   <td><%= array['sync_contact_list'][i]['email'] %></td>
+						   <td>Destination: <%= mbtaFeed['Messages'][i]['Destination'] %></td></br>
+						   <td>Train No:<%= mbtaFeed['Messages'][i]['Trip'] %></td></br>
+						   <td>Scheduled Arrival: <%= mbtaFeed['Messages'][i]['Scheduled'] %></td></br>
+						   </br>
+						   </br>
 						 </tr>
-						 <% } %>
+						 <% 
+							} 
+							} catch(err) {}	%>
 			</div>
 		</div>
 
