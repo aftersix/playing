@@ -20,7 +20,8 @@
 					  <% 
 					  
 					  try { for(var i=0; i<mbtaFeed['Messages'].length; i++) {
-							%>
+						if(mbtaFeed['Messages'][i]['Stop']=="Salem"){
+						%>
 						 		 
 						   
 						  
@@ -32,7 +33,7 @@
 						   </br>
 						 </tr>
 						 <% 
-							} 
+							}} 
 							} catch(err) {}	%>
 			</div>
 		</div>
