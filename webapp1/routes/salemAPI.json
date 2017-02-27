@@ -1,0 +1,10 @@
+{"stop_id":"Salem","stop_name":"Salem","mode":
+[{"route_type":"2","mode_name":"Commuter Rail","route":
+[{"route_id":"CR-Newburyport","route_name":"Newburyport/Rockport Line","direction":
+[{"direction_id":"0","direction_name":"Outbound","trip":
+[{"trip_id":"CR-Weekday-Fall-16-159","trip_name":"159 (9:40 am from North Station)","sch_arr_dt":"1488208320","sch_dep_dt":"1488208320"}]},
+{"direction_id":"1","direction_name":"Inbound","trip":
+[{"trip_id":"CR-Weekday-Fall-16-164","trip_name":"164 (10:00 am from Newburyport)","sch_arr_dt":"1488209460","sch_dep_dt":"1488209460"}]}
+]}]
+}]
+}
