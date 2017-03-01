@@ -10,7 +10,9 @@ app.set('port',process.env.PORT || 6969);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.get('/',routes.index);
+var predictions = require('./routes/predictions');
+
+app.get('/',predictions.predictions);
 
 var about = require('./routes/about');
 app.get('/about', about.about);
@@ -20,6 +22,9 @@ app.get('/trains', trains.trains);
 
 var trainsOLD = require('./routes/trains');
 app.get('/trainsOLD', trainsOLD.trains);
+
+var predictions = require('./routes/predictions');
+app.get('/predictions', predictions.predictions);
 
 http.createServer(app).listen(app.get('port'), function(){
 console.log('Express server listening on port ' + app.get('port'));
