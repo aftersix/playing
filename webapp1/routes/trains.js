@@ -32,7 +32,7 @@ request({
 		 
 		 
 		 //for testing - print the array of mbta data feeds
-		 //console.log(mbtaFeed);
+		 console.log(mbtaFeed);
 	  }
 	})
 

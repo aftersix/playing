@@ -25,13 +25,13 @@ var request = require('request');
 	
 
 	
-var salemSchedule = {
-    table: []  
-};	
+	
 
 
 
 
+var exportSalem = function exportSalem(callback){
+	var salemSchedule = { table: []  };
 request({
 	url: 'http://realtime.mbta.com/developer/api/v2/schedulebystop?api_key=wX9NwuHnZU2ToO7GmGR9uw&stop=Salem&format=json',
 	json: true
@@ -55,6 +55,8 @@ request({
 							
 							salemSchedule.table.push({train_name: direction['trip'][l]['trip_name'], scheduleTime: direction['trip'][l]['sch_arr_dt']});
 							//console.log(salemSchedule);
+							
+							
 						}
 					}
 				}
@@ -63,12 +65,40 @@ request({
 	
 	console.log("getSalem.js");
 	console.log(salemSchedule);
+	 console.log(salemSchedule['table'][0]['train_name']);
+	 console.log(salemSchedule['table'].length);
+	 
+	   for(var i=0; i<salemSchedule['table'].length; i++) {
+		   console.log(i);
+		   console.log(salemSchedule['table'][i]['train_name']);
+ }
+ 
+ 
+ 
 	
 	});
-	
+	return salemSchedule;
+	callback();
+}
 
 
-
+exports.schedule = exportSalem();
 exports.three = function(){return 3;};
+exports.four = 4;
+
+var getTen =  function getTen (callback) {
+	
+	var ten = 10;
+	return ten;
+	callback();
+	
+}
+
+exports.ten = getTen();
+
+console.log(exportSalem());
+
+
+
 
 
