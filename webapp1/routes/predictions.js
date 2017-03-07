@@ -47,7 +47,7 @@ var trainAlerts;
 								direction['trip'][l]['pre_dt'] = Sugar.Date.format(new Date(direction['trip'][l]['pre_dt']*1000),  '{hh}:{mm}');
 								//console.log("Predicted at: " + direction['trip'][l]['sch_arr_dt']);
 								
-								console.log(difference);
+								//console.log(difference);
 								
 								salemSchedule.table.push({train_direction: route['direction'][k]['direction_name'], train_name: direction['trip'][l]['trip_name'], scheduleTime: direction['trip'][l]['sch_arr_dt'],predictedTime:direction['trip'][l]['pre_dt'],difference:difference});
 								console.log(salemSchedule);

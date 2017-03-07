@@ -13,11 +13,20 @@ console.log("ran trains.js");
 
 exports.trains = function(req,res) {
 
+console.log(req.param("station"));
+
+var station = req.param("station");
+if(req.param("station")=="Hamilton/ Wenham"){station = "Hamilton/%20Wenham";}
+
+var url = "http://realtime.mbta.com/developer/api/v2/schedulebystop?api_key=wX9NwuHnZU2ToO7GmGR9uw&stop="+station+"&format=json"
+
+console.log(url);
+
 var salemSchedule = {table: [] };
 
 	var salemPromise = new Promise((resolve, reject) => {
 		request({
-		url: 'http://realtime.mbta.com/developer/api/v2/schedulebystop?api_key=wX9NwuHnZU2ToO7GmGR9uw&stop=Salem&format=json',
+		url: url,
 		json: true
 		},
 
@@ -54,7 +63,7 @@ var salemSchedule = {table: [] };
 
 
 	Promise.all([salemPromise]).then(values => { 
-	  res.render('trains2', {title:'trains' , salemSchedule:salemSchedule });
+	  res.render('trains2', {title:'trains' , salemSchedule:salemSchedule , station:req.param("station") });
 	  console.log("ran trains.js exports module - promise done.");
 	});
 

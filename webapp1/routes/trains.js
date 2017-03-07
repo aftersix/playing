@@ -11,7 +11,7 @@ var request = require('request');
 console.log("ran trains.js");
 
 
-exports.trains = function(req,res) {
+exports.trains = function(req,res,param) {
 
 request({
 	url: 'http://developer.mbta.com/lib/RTCR/RailLine_12.json',
@@ -33,6 +33,7 @@ request({
 		 
 		 //for testing - print the array of mbta data feeds
 		 console.log(mbtaFeed);
+		 console.log(param);
 	  }
 	})
 
