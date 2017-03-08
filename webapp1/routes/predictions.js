@@ -38,8 +38,9 @@ var trainAlerts;
 							for (var l=0; l<direction['trip'].length; l++){
 								//console.log(direction['trip'][l]['trip_name']);
 								
-								var difference = direction['trip'][l]['sch_arr_dt'] - direction['trip'][l]['pre_dt'];
-								difference = Math.abs(difference);
+								
+								var difference = direction['trip'][l]['pre_dt'] - direction['trip'][l]['sch_arr_dt'];
+								//difference = Math.abs(difference);
 								
 								
 								direction['trip'][l]['sch_arr_dt'] = Sugar.Date.format(new Date(direction['trip'][l]['sch_arr_dt']*1000),  '{hh}:{mm}');
