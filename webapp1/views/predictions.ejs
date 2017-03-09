@@ -33,7 +33,7 @@
 											<td><b><p style="color:red;">Now: <%= salemSchedule['table'][i]['predictedTime'] %> </p></td></b>
 											<% } else if (salemSchedule['table'][i]['difference'] > 60) { %>
 											<td><b><p style="color:orange;">Now: <%= salemSchedule['table'][i]['predictedTime'] %> </p></td></b>
-											<% } else if (salemSchedule['table'][i]['difference'] > 0) { %>
+											<% } else if (salemSchedule['table'][i]['difference'] > -60) { %>
 											<p style="color:green;"><b> On Time </b></p>
 											<% } else { %>
 											<td><b><p style="color:green;"><u>Now: <%= salemSchedule['table'][i]['predictedTime'] %> </u></p></td></b>
